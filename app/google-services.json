@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "490033794602",
+    "firebase_url": "https://apptimer.firebaseio.com",
+    "project_id": "apptimer",
+    "storage_bucket": "apptimer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490033794602:android:fa322f0710d2f808",
+        "android_client_info": {
+          "package_name": "com.sapianz.apptimer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490033794602-796s6epa80r7vvgeknr1cqaqdmo2gtnu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sapianz.apptimer",
+            "certificate_hash": "c2c3ce98b459e20ba18fbde6c467488500e1013b"
+          }
+        },
+        {
+          "client_id": "490033794602-him92pa0ebgbch3juud9of65c7k2c41a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMb0byYnnXXRx1JTQ5I517H03Fvwqyy78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490033794602-him92pa0ebgbch3juud9of65c7k2c41a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      },
+      "admob_app_id": "ca-app-pub-8191626418975832~4347892980"
+    }
+  ],
+  "configuration_version": "1"
+}

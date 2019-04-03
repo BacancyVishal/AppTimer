@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.txusballesteros.widgets.FitChart
+                    android:id="@+id/fitChart"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:animationMode="overdraw"
+                    app:backStrokeColor="@color/default_back_stroke_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeSize="20dp"
+                    app:valueStrokeColor="@color/secondaryLightColor" />
+
+                <TextView
+                    android:id="@+id/todayUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="0h 0min"
+                    android:textAppearance="@android:style/TextAppearance.Material.Large"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/fitChart"
+                    app:layout_constraintEnd_toEndOf="@+id/fitChart"
+                    app:layout_constraintHorizontal_bias="0.489"
+                    app:layout_constraintStart_toStartOf="@+id/fitChart"
+                    app:layout_constraintTop_toTopOf="@+id/fitChart" />
+
+                <TextView
+                    android:id="@+id/stayBelow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stay Below"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/todayUsage"
+                    app:layout_constraintStart_toStartOf="@+id/todayUsage"
+                    app:layout_constraintTop_toBottomOf="@+id/todayUsage" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="?android:attr/listDivider"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@+id/fitChart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fitChart" />
+
+                <TextView
+                    android:id="@+id/targetUsage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0h 0min"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/stayBelow"
+                    app:layout_constraintStart_toStartOf="@+id/stayBelow"
+                    app:layout_constraintTop_toBottomOf="@+id/stayBelow" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/todayUsage"
+                    app:layout_constraintEnd_toEndOf="@+id/todayUsage"
+                    app:layout_constraintStart_toStartOf="@+id/todayUsage" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/dataLoader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:indeterminate="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Refreshing Data. Please Wait..."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/topAppsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                tools:listitem="@layout/recycler_view_item_1">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
