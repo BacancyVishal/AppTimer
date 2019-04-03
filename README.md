@@ -1,4 +1,4 @@
-##AppTimer
+## AppTimer
 
 An android app to track app usage time.
 
